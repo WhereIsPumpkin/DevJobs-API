@@ -1,6 +1,6 @@
 swagger: "2.0"
 info:
-  title: DevJobs API 🗒️
+  title: DevJobs API 💼
   description: API for managing dev jobs
   version: 1.0.0
 schemes:
@@ -8,8 +8,8 @@ schemes:
 paths:
   /jobs/6/2:
     get:
-      summary: Retrieve a list of all ToDo items.
-      description: Returns an array of ToDo items stored in the database. Each item includes a unique ID, a description of the task (`todoTask`), and a boolean value (`done`) indicating whether the task is completed or not.
+      summary: Retrieve a paginated list of DevJobs.
+      description: Returns an array of DevJobs stored in the database, limited to a specific page and number of items per page. Each job includes a unique ID, a job title, a job description, and other relevant job details. The page number and number of items per page can be specified in the request URL, for example, jobs/6/2 would retrieve the second page of 6 DevJobs.
       produces:
         - application/json
       responses:
