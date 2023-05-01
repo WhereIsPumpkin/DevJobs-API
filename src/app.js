@@ -2,6 +2,7 @@ import express from "express";
 import connect from "./database/mongo.js";
 import dotenv from "dotenv";
 import path from "path";
+import cors from "cors";
 import swaggerUi from "swagger-ui-express";
 import fs from "fs";
 import yaml from "js-yaml";
@@ -11,6 +12,8 @@ dotenv.config();
 connect();
 
 const app = express();
+
+app.use(cors());
 
 app.use(express.json());
 
